@@ -3,7 +3,7 @@ const sumAll = function() {
 };
 
 const toInteger = function(input) {
-    // Convert the input to an integer. If the input is not a number, set it to 0.
+    // Convert input to integer. If input is NaN, set assign 0.
     const result = isNaN(input) ? 0 : Math.floor(input);
     // Return the result.
     return result;
@@ -27,7 +27,8 @@ ALGORITHM:
 # Check the first two inputs.
     # If input is not a number, assign it a default value of 0.
     # Otherwise, convert input to integer.
-    # Add these inputs. Store the result.
+    # Get the sum of every number between (and including) the inputs.
+    # Update the result.
 # Output the result.
 
 PROGRAM:
@@ -37,11 +38,24 @@ PROGRAM:
         # Within toInteger():
             # Convert the input to an integer.
                 # Initialize a numeric variable named result and use a 
-                    ternary expression to check if input is a number
+                ternary expression to check if input is a number
                     # If not a number, assign 0.
-                    # If is a number, assign value using Math.floor(input).
+                    # If is a number, assign value using
+                    Math.floor(input).
             # Return the result.
-
+# Build a function that takes 2 integers and returns the sum of every
+number between(and including) them:
+    # Initialize an constant named sumAll with a function expression 
+    that has two parameters `integer1`, `integer2` with default values 
+    0.
+    # Within sumAll()...
+        # Create a numeric variable to hold the result with initial
+        value 0.
+        # Perform toInteger(integer) on integer1 and integer2.
+        # Get the sum of every number between (and including) the inputs.
+            # Loop from integer1 to integer2
+                # Update result to result + incrementor.
+    # Return result.
 
 */
 
