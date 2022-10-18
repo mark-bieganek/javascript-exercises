@@ -2,6 +2,13 @@ const sumAll = function() {
 
 };
 
+const toInteger = function(input) {
+    // Convert the input to an integer. If the input is not a number, set it to 0.
+    const result = isNaN(input) ? 0 : Math.floor(input);
+    // Return the result.
+    return result;
+}
+
 /*
 Implement a function that takes 2 integers and returns the sum of every
 number between(and including) them:
@@ -24,6 +31,17 @@ ALGORITHM:
 # Output the result.
 
 PROGRAM:
+# Build a re-usable function to convert inputs to integers.
+    #Initialize a constant named toInteger with a function expression
+        that has 1 parameter, `input` with a default value 0.
+        # Within toInteger():
+            # Convert the input to an integer.
+                # Initialize a numeric variable named result and use a 
+                    ternary expression to check if input is a number
+                    # If not a number, assign 0.
+                    # If is a number, assign value using Math.floor(input).
+            # Return the result.
+
 
 */
 
