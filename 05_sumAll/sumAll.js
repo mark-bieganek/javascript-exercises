@@ -1,5 +1,14 @@
-const sumAll = function() {
-
+const sumAll = function(integer1, integer2) {
+    let result = 0;
+    // Convert arguments to integers.
+    integer1 = toInteger(integer1);
+    integer2 = toInteger(integer2);
+    // Get the sum of every number between (and including) the inputs.
+    for (i = integer1; i <= integer2; i++) {
+        result += i;
+    };
+    // Return the result.
+    return result;
 };
 
 const toInteger = function(input) {
