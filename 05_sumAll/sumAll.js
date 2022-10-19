@@ -1,7 +1,14 @@
 const sumAll = function(...args) {
     let result = 0;
-    // Convert arguments to integers.
-    args.forEach((arg) => {arg = toInteger(arg)});
+    // Perform input validation and conversion.
+    for (let arg of args) {
+        // Convert arguments to integers.
+        arg = toInteger(arg);
+        // Disallow negative numbers.
+        if (arg < 0) {
+            return 'ERROR';
+        }
+    };
     // Ensure args are in ascending order by sorting them.
     args.sort();
     // Get the sum of every number between (and including) the inputs.
