@@ -1,9 +1,13 @@
 const sumAll = function(...args) {
+    /* 
+    This function takes 2 integers and returns the sum of every 
+    number between(and including) them.
+    */
     // Create a variable to hold the result.
     let result = 0;
     // Perform input validation and conversion.
     for (let arg of args) {
-        // Disallow negative numbers.
+        // Disallow negative numbers and non-number args.
         if (arg < 0 || typeof(arg) !== 'number') {
             result = 'ERROR';
             return result;
