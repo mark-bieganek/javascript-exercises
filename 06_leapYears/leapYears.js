@@ -23,11 +23,11 @@ CONSTRAINTS:
 ALGORITHM:
 * Create a way to record the result.
 * Convert the given year to an integer.
-* If all of these conditions are true, then record that the given year is
-truly a leap year.
-    * Given year divided by 4 has no remainder.
-    * Given year divided by 100 has no remainder.
-    * Given year divided by 400 has no remainder.
+* If all of these math operations have no remainder, then it's a leap
+year.
+    * Given year divided by 4.
+    * Given year divided by 100.
+    * Given year divided by 400.
 * Announce the result.
 
 PROGRAM:
@@ -47,17 +47,20 @@ leap year:
     # Initialize a constant named leapYears with a function expression 
     that accepts an integer (year) argument from the user.
     # Within leapYears()...
-        # Create a boolean variable to hold the result with initial
-        value false.
+        # Create a numeric variable named `remainder` with no initial 
+        value.
         # Validate the provided argument.
             # If not a numeric data type, return `ERROR`.
         # Perform toInteger(argument) on the provided argument.
         # Validate the argument as a leap year.
-            # Use a ternary expression with multiple conditions.
-                # Provided argument divided by 4 has no remainder.
-                # Provided argument divided by 100 has no remainder.
-                # Provided argument divided by 400 has no remainder.
+            # Sum the output of these math operations and store the
+            the result in variable, `remainder`.
+                # Divide the argument by 4, output the remainder.
+                # Divide the argument by 100, output the remainder.
+                # Divide the argument by 4, output the remainder.
     # Return result.
+        # Return true if remainder equals zero.
+        # Return false if remainder equals anything else.
 
 
 EXPECTED OUTPUT:
