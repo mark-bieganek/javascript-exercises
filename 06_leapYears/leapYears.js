@@ -2,8 +2,12 @@ const leapYears = function() {
 
 };
 
-// Do not edit below this line
-module.exports = leapYears;
+const toInteger = function(input) {
+    // Convert input to integer. If input is NaN, set assign 0.
+    const result = isNaN(input) ? 0 : Math.floor(input);
+    // Return the result.
+    return result;
+}
 
 
 /* 
@@ -61,3 +65,7 @@ EXPECTED OUTPUT:
 leapYears(2000) // is a leap year: returns true
 leapYears(1985) // is not a leap year: returns false
 ```
+
+// Do not edit below this line
+module.exports = leapYears;
+
