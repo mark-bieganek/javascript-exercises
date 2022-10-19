@@ -1,10 +1,11 @@
-const sumAll = function(integer1, integer2) {
+const sumAll = function(...args) {
     let result = 0;
     // Convert arguments to integers.
-    integer1 = toInteger(integer1);
-    integer2 = toInteger(integer2);
+    args.forEach((arg) => {arg = toInteger(arg)});
+    // Ensure args are in ascending order by sorting them.
+    args.sort();
     // Get the sum of every number between (and including) the inputs.
-    for (i = integer1; i <= integer2; i++) {
+    for (i = args[0]; i <= args[1]; i++) {
         result += i;
     };
     // Return the result.
@@ -30,6 +31,7 @@ CONSTRAINTS:
 1. Get the sum of two integers.
 2. As integers, the numbers should not have a fractional component,
     and don't support decimal points.
+3. The integers can be provided in any order.
 
 ALGORITHM:
 # Create a way to remember the result of our operations.
