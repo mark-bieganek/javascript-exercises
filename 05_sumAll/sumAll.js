@@ -31,7 +31,8 @@ CONSTRAINTS:
 1. Get the sum of two integers.
 2. As integers, the numbers should not have a fractional component,
     and don't support decimal points.
-3. The integers can be provided in any order.
+3. Negative integers are not permitted.
+4. The integers can be provided in any order.
 
 ALGORITHM:
 # Create a way to remember the result of our operations.
@@ -57,21 +58,20 @@ PROGRAM:
 # Build a function that takes 2 integers and returns the sum of every
 number between(and including) them:
     # Initialize an constant named sumAll with a function expression 
-    that has two parameters `integer1`, `integer2` with default values 
-    0.
+    that accepts arguments from the user.
     # Within sumAll()...
         # Create a numeric variable to hold the result with initial
         value 0.
-        # Perform toInteger(integer) on integer1 and integer2.
+        # Perform toInteger(integer) the provided arguments.
+        # To ensure arguments are in ascending order, sort the arguments.
         # Get the sum of every number between (and including) the inputs.
-            # Loop from integer1 to integer2
+            # Loop from argument1 to argument2
                 # Update result to result + incrementor.
     # Return result.
 
 
 // BRAINSTORMING:
-to support arguments provided out of order, we can sort the arguments[] array
-and then call the arguments using argument[0], argument[1]
+
 
 */
 
