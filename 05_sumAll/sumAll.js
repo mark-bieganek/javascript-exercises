@@ -1,13 +1,16 @@
 const sumAll = function(...args) {
+    // Create a variable to hold the result.
     let result = 0;
     // Perform input validation and conversion.
     for (let arg of args) {
-        // Convert arguments to integers.
-        arg = toInteger(arg);
         // Disallow negative numbers.
-        if (arg < 0) {
-            return 'ERROR';
-        }
+        if (arg < 0 || typeof(arg) !== 'number') {
+            result = 'ERROR';
+            return result;
+        } else {
+            // Convert arguments to integers.
+            arg = toInteger(arg);
+        };
     };
     // Ensure args are in ascending order by sorting them.
     args.sort();
@@ -39,12 +42,13 @@ CONSTRAINTS:
 2. As integers, the numbers should not have a fractional component,
     and don't support decimal points.
 3. Negative integers are not permitted.
-4. The integers can be provided in any order.
+4. Inputs must be numerical.
+5. The integers can be provided in any order.
 
 ALGORITHM:
 # Create a way to remember the result of our operations.
 # Check the first two inputs.
-    # If input is not a number, assign it a default value of 0.
+    # If input is not a number, return `ERROR`.
     # Otherwise, convert input to integer.
     # Get the sum of every number between (and including) the inputs.
     # Update the result.
@@ -69,7 +73,11 @@ number between(and including) them:
     # Within sumAll()...
         # Create a numeric variable to hold the result with initial
         value 0.
-        # Perform toInteger(integer) the provided arguments.
+        # Validate the arguments.
+            # If not a numeric data type, return `ERROR`.
+            # If a numeric data type with a value of less than zero,
+            return `ERROR`.
+        # Perform toInteger(argument) on the provided arguments.
         # To ensure arguments are in ascending order, sort the arguments.
         # Get the sum of every number between (and including) the inputs.
             # Loop from argument1 to argument2
