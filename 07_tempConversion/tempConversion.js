@@ -30,6 +30,19 @@ OPERATIONS:
 2. Convert a given number representing a temperature in °C to °F.
 3. Ensure the given value is a number.
 
+ALGORITHM (Fahrenheit to Celsius):
+1. Read a given input.
+2. Validate given input as a number. Return an error if not a number.
+3. Perform conversion on the given input with formula ℃=(℉-32)/1.8.
+4. Return the result.
+
+ALGORITHM (Celsius to Fahrenheit):
+1. Read a given input.
+2. Validate given input as a number. Return an error if not a number.
+3. Perform conversion on the given input with formula ℉=(℃*1.8)+32.
+4. Return the result.
+
+
 */
 
 // Do not edit below this line
