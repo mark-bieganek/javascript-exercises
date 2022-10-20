@@ -39,7 +39,7 @@ const toInteger = (numParam1) => {
 /*
  * An arrow function that tests if dividing two given numbers returns a remainder.
  * @param {numParam1} required This parameter is always needed. Number expected.
- * @param {numParam1} required This parameter is always needed. Number expected.
+ * @param {numParam2} required This parameter is always needed. Number expected.
  * @return {boolean} if there was no remainder when dividing the given numbers.
  */
 const isDivisible = (numParam1 = 0, numParam2 = 0) => {
