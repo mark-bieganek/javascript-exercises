@@ -7,7 +7,7 @@ const ftoc = (fahrenheitParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
   if (isNaN(fahrenheitParam)) {return fahrenheitParam};
   // Perform conversion on the given input with formula °C=(°F-32)/1.8.
-  return (fahrenheitParam-32)/1.8;
+  return roundToOneDecimal((fahrenheitParam-32)/1.8);
 };
 
 /* 
@@ -19,9 +19,20 @@ const ctof = (celsiusParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
   if (isNaN(celsiusParam)) {return celsiusParam};
   // Perform conversion on the given input with formula °F=(°C*1.8)+32.
-  return (celsiusParam*1.8)+32;
+  return roundToOneDecimal((celsiusParam*1.8)+32);
 };
 
+/* 
+ * An arrow function that rounds a given number to one decimal place.
+ * @param {numParam1} required This parameter is always needed. Number expected.
+ * @return {number} representing the rounded result.
+ */
+const roundToOneDecimal = (numParam1) => {
+  // Validate given input as a number. Do not perform rounding if NaN.
+  if (isNaN(numParam1)) {return numParam1};
+  // Note that the result is divided by 10 to coerce it into a single decimal point.
+  return (Math.round(numParam1 * 10) / 10);
+}
 
 /*
 Write two functions that convert temperatures from Fahrenheit to 
