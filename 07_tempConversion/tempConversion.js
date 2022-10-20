@@ -6,6 +6,8 @@
 const ftoc = (fahrenheitParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
   if (isNaN(fahrenheitParam)) {return fahrenheitParam};
+  // Perform conversion on the given input with formula °C=(°F-32)/1.8.
+  return (fahrenheitParam-32)/1.8;
 };
 
 /* 
@@ -16,6 +18,8 @@ const ftoc = (fahrenheitParam = 0) => {
 const ctof = (celsiusParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
   if (isNaN(celsiusParam)) {return celsiusParam};
+  // Perform conversion on the given input with formula °F=(°C*1.8)+32.
+  return (celsiusParam*1.8)+32;
 };
 
 
