@@ -7,15 +7,16 @@ const leapYears = function(year) {
         year = toInteger(year);
     };
     // Check if it's a leap year.
-    // If not divisible by 4, it's not a leap year.
-    if (year % 4 >= 1) {return false;}
-    else {
-        // If divisible by 100, and also not divisible by 400, it's not a leap year.
-        if (year % 100 === 0) {
-        if (year % 400 >= 1) {return false;}
-        }
-    }
-    return true;
+    // Leap years are divisible by 4.
+    // Leap years are not divisible by 100, unless divisible by 400.
+    // Perform these division operations, and determine if there are remainders.
+    const divisibleBy4 = isDivisible(4, year);
+    const divisibleBy100 = isDivisible(100, year);
+    const divisibleBy400 = isDivisible(400, year);
+    // Validate if it's a leap year.
+    const result = divisibleBy4 && (!divisibleBy100 || (divisibleBy100 && divisibleBy400));
+    // Output the result.
+    return result;
 }
 
 const toInteger = function(input) {
@@ -25,6 +26,11 @@ const toInteger = function(input) {
     return result;
 }
 
+const isDivisible = function(byNumber = 0, input = 0) {
+    // Divides an input number by another number.
+    // If no remainder, the function returns true
+    return !(input % byNumber);
+}
 
 /* 
 Create a function that determines whether or not a given year is a 
@@ -59,6 +65,13 @@ PROGRAM:
                     # If is a number, assign value using
                     Math.floor(input).
             # Return the result.
+# Build a re-usable function to answer if dividing two numbers returns
+a remainder.
+    #Initialize a constant named isDivisible with a function expression
+        that has 2 parameters, `byNumber`, and `input` with defaults 0.
+        # Within isDivisible():
+            # Perform division on the two numbers, return if there is a
+            remainder. Expected output true or false.
 # Build a function that takes 1 integer and returns true if it's a
 leap year:
     # Initialize a constant named leapYears with a function expression 
