@@ -1,4 +1,4 @@
-const leapYears = function(year) {
+const leapYears = (year) => {
     // Validate the given year as a year value.
     if (typeof(year) !== 'number') {
         return false;
@@ -19,14 +19,14 @@ const leapYears = function(year) {
     return result;
 }
 
-const toInteger = function(input) {
+const toInteger = (input) => {
     // Convert input to integer. If input is NaN, set assign 0.
     const result = isNaN(input) ? 0 : Math.floor(input);
     // Return the result.
     return result;
 }
 
-const isDivisible = function(byNumber = 0, input = 0) {
+const isDivisible = (byNumber = 0, input = 0) => {
     // Divides an input number by another number.
     // If no remainder, the function returns true
     return !(input % byNumber);
