@@ -1,6 +1,22 @@
-const leapYears = function() {
-
-};
+const leapYears = function(year) {
+    // Validate the given year as a year value.
+    if (typeof(year) !== 'number') {
+        return false;
+    } else {
+        // Convert given year to an integer.
+        year = toInteger(year);
+    };
+    // Check if it's a leap year.
+    // If not divisible by 4, it's not a leap year.
+    if (year % 4 >= 1) {return false;}
+    else {
+        // If divisible by 100, and also not divisible by 400, it's not a leap year.
+        if (year % 100 === 0) {
+        if (year % 400 >= 1) {return false;}
+        }
+    }
+    return true;
+}
 
 const toInteger = function(input) {
     // Convert input to integer. If input is NaN, set assign 0.
@@ -18,16 +34,17 @@ CONSTRAINTS:
 * Leap years:
     * are divisible by four (ie: 1984, 2004) with no remainder.
     * are not divisible by 100 (ie: 1800, 1900) with no remainder.
-    * are not divisible by 400 (ie: 1600, 2000) with no remainder.
+        * unless they are divisible by 400 (ie: 1600, 2000) with no
+        remainder.
 
 ALGORITHM:
 * Create a way to record the result.
 * Convert the given year to an integer.
-* If all of these math operations have no remainder, then it's a leap
-year.
-    * Given year divided by 4.
-    * Given year divided by 100.
-    * Given year divided by 400.
+* Performing the following math operations on the year value will
+determine if it's a leap year.
+    * If there's a remainder of 0 when dividing the year by 4
+    * If there's a remainder greater than 0 when dividing by 100
+        * And there's a remainder of 0 with dividing by 400 
 * Announce the result.
 
 PROGRAM:
@@ -57,7 +74,7 @@ leap year:
             the result in variable, `remainder`.
                 # Divide the argument by 4, output the remainder.
                 # Divide the argument by 100, output the remainder.
-                # Divide the argument by 4, output the remainder.
+                # Divide the argument by 400, output the remainder.
     # Return result.
         # Return true if remainder equals zero.
         # Return false if remainder equals anything else.
@@ -68,7 +85,7 @@ EXPECTED OUTPUT:
 leapYears(2000) // is a leap year: returns true
 leapYears(1985) // is not a leap year: returns false
 ```
+*/
 
 // Do not edit below this line
 module.exports = leapYears;
-
