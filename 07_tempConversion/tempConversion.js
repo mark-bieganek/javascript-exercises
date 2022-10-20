@@ -50,13 +50,15 @@ ALGORITHM (Fahrenheit to Celsius):
 1. Read a given input.
 2. Validate given input as a number. Return an error if not a number.
 3. Perform conversion on the given input with formula °C=(°F-32)/1.8.
-4. Return the result.
+4. Round the result to 1 decimal place.
+5. Return the result.
 
 ALGORITHM (Celsius to Fahrenheit):
 1. Read a given input.
 2. Validate given input as a number. Return an error if not a number.
 3. Perform conversion on the given input with formula °F=(°C*1.8)+32.
-4. Return the result.
+4. Round the result to 1 decimal place.
+5. Return the result.
 
 
 */
