@@ -12,7 +12,7 @@ const ftoc = (fahrenheitParam = 0) => {
 
 /* 
  * An arrow function that converts a given temperature in °C to °F.
- * @param {fahrenheitParam} required This parameter is always needed. Number expected.
+ * @param {celsiusParam} required This parameter is always needed. Number expected.
  * @return {number} representing the result of the conversion.
  */
 const ctof = (celsiusParam = 0) => {
