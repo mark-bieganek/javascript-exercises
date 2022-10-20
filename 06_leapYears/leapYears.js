@@ -1,35 +1,51 @@
-const leapYears = (year) => {
-    // Validate the given year as a year value.
-    if (typeof(year) !== 'number') {
+/* 
+ * An arrow function that determines whether or not a given year is a leap year.
+ * @param {yearParam} required This parameter is always needed. Number expected.
+ * @return {boolean} if {yearParam} is a leap year.
+ */
+const leapYears = (yearParam) => {
+    // Validate the given yearParam as a year value.
+    if (typeof(yearParam) !== 'number') {
         return false;
     } else {
         // Convert given year to an integer.
-        year = toInteger(year);
+        yearParam = toInteger(yearParam);
     };
     // Check if it's a leap year.
     // Leap years are divisible by 4.
     // Leap years are not divisible by 100, unless divisible by 400.
     // Perform these division operations, and determine if there are remainders.
-    const divisibleBy4 = isDivisible(4, year);
-    const divisibleBy100 = isDivisible(100, year);
-    const divisibleBy400 = isDivisible(400, year);
+    const divisibleBy4 = isDivisible(4, yearParam);
+    const divisibleBy100 = isDivisible(100, yearParam);
+    const divisibleBy400 = isDivisible(400, yearParam);
     // Validate if it's a leap year.
     const result = divisibleBy4 && (!divisibleBy100 || (divisibleBy100 && divisibleBy400));
     // Output the result.
     return result;
 }
 
-const toInteger = (input) => {
+/* 
+ * An arrow function that converts a given number to an integer.
+ * @param {numParam1} required This parameter is always needed. Number expected.
+ * @return {number} as an integer.
+ */
+const toInteger = (numParam1) => {
     // Convert input to integer. If input is NaN, set assign 0.
-    const result = isNaN(input) ? 0 : Math.floor(input);
+    const result = isNaN(numParam1) ? 0 : Math.floor(numParam1);
     // Return the result.
     return result;
 }
 
-const isDivisible = (byNumber = 0, input = 0) => {
+/*
+ * An arrow function that tests if dividing two given numbers returns a remainder.
+ * @param {numParam1} required This parameter is always needed. Number expected.
+ * @param {numParam1} required This parameter is always needed. Number expected.
+ * @return {boolean} if there was no remainder when dividing the given numbers.
+ */
+const isDivisible = (numParam1 = 0, numParam2 = 0) => {
     // Divides an input number by another number.
     // If no remainder, the function returns true
-    return !(input % byNumber);
+    return !(numParam1 % numParam2);
 }
 
 /* 
