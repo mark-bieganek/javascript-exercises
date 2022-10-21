@@ -1,10 +1,19 @@
 /* 
  * An arrow function that adds at least two numbers and returns the sum.
- * @param {...number} num A positive or negative number
- * @returns {number} representing the result of the conversion
+ * @argument {...number} numbers - A positive or negative number.
+ * @returns {number} Number represents the sum of the numbers.
  */
-const add = function(num) {
-	
+const add = function(...numbers) {
+  // Stores the result of the calculations.
+  let sum = 0;
+	// Iterate through the given numbers.
+  for (const num of numbers) {
+    // Validate given input as a number. If NaN, return NaN.
+    if (isNaN(num)) {return NaN};
+    // Add this number to the current sum.
+    sum += num;
+  };
+  return sum;
 };
 
 const subtract = function() {
@@ -50,7 +59,7 @@ const factorial = function() {
  * ALGORITHM:
  * (add)
  * - Create a variable named sum with a default value of 0.
- * - Iterate through the given parameter values.
+ * - Iterate through the given arguments.
  *    - Validate given value as a number. Return an error if not a number.
  *    - Add this value to the current sum.
  * - Return the result.
