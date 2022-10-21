@@ -70,7 +70,18 @@ const factorial = function() {
  * (subtract)
  * 1. A minimum of two numbers must be provided.
  * 2. Non-numerical inputs are not accepted.
- * 3. Subtraction always starts from the value of the first given number.
+ * 3. Subtraction always starts from the value of the first given
+ * number. The second given number reduces the value of the first.
+ * 4. If there are more than two given numbers, each additional number
+ * reduces the value of the previous calculation.
+ * 
+ * (multiply)
+ * 1. A minimum of two numbers must be provided.
+ * 2. Non-numerical inputs are not accepted.
+ * 3. Multiplication always starts from the value of the first given
+ * number, multiplied by the value of the second number.
+ * 4. If there are more than two given numbers, each additional number
+ * multiplies the value of the previous calculation.
  * 
  * OPERATIONS:
  * (add)
@@ -80,7 +91,12 @@ const factorial = function() {
  * 
  * (subtract)
  * - Validate the given values as numbers.
- * - subtract the values from one-another.
+ * - Subtract the values from one-another.
+ * - Output the result.
+ * 
+ *  * (subtract)
+ * - Validate the given values as numbers.
+ * - Multiply the values by one-another.
  * - Output the result.
  * 
  * ALGORITHM:
@@ -99,6 +115,16 @@ const factorial = function() {
  *    difference variable.
  *    - Otherwise, reduce the difference variable by this value.
  * - Return the result.
+ * 
+ * (multiply)
+ * - Create a variable named product with no default value.
+ * - Iterate through the given arguments.
+ *    - Validate given value as a number. Return an error if not a number.
+ *    - If this is the first iteration, assign this value to the
+ *    product variable.
+ *    - Otherwise, multiply the product variable by this value.
+ * - Return the result.
+ * 
  */
 
 // Do not edit below this line
