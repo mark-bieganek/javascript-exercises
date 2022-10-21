@@ -67,6 +67,11 @@ const factorial = function() {
  * 2. Non-numerical inputs are not accepted.
  * 3. Addition always starts from zero.
  * 
+ * (subtract)
+ * 1. A minimum of two numbers must be provided.
+ * 2. Non-numerical inputs are not accepted.
+ * 3. Subtraction always starts from the value of the first given number.
+ * 
  * OPERATIONS:
  * (add)
  * - Validate the given values as numbers.
