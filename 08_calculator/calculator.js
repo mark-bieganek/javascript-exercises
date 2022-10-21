@@ -41,12 +41,40 @@ const sum = function() {
 };
 
 /* 
- * An arrow function that multiplies at least two numbers and returns the product.
- * @argument {...number} numbers - A positive or negative number.
+ * An arrow function that multiplies an array of numbers and returns the product.
+ * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} product represents the difference of the numbers.
  */
 const multiply = function(...numbers) {
-  
+  	// Stores the result of the calculations.
+    let product;
+    // Stores an array of numbers to calculate, from given numbers.
+    let args = [];
+    // Iterate through the given numbers.
+    for (const num of numbers) {
+      // If this argument is an array, iterate through it as well.
+      if (Array.isArray(num)) {
+        for (item of num) {
+          // Perform multiplication.
+          product = calculate(item);
+        };
+      } else {
+        // Perform multiplication.
+        product = calculate(num);
+      };
+    };
+    // A nested named function that performs the multiplication calculation.
+    function calculate(num) {
+      // Validate given input as a number. If NaN, return NaN.
+      if (isNaN(num)) {return NaN};
+      // If this is the first iteration, store num in `product`.
+      if (typeof product === 'undefined') {product = num}
+        // Otherwise, perform subtraction on the current result.
+        else {product *= num};
+      return product;
+    }
+    // Return the final product.
+    return product;
 };
 
 const power = function() {
@@ -99,7 +127,7 @@ const factorial = function() {
  * - Subtract the values from one-another.
  * - Output the result.
  * 
- *  * (subtract)
+ *  * (multiply)
  * - Validate the given values as numbers.
  * - Multiply the values by one-another.
  * - Output the result.
@@ -123,11 +151,17 @@ const factorial = function() {
  * 
  * (multiply)
  * - Create a variable named product with no default value.
+ * - This function accepts arguments as arrays of numbers or number primitives.
+ * - Create a named function calculate() with parameter `num`.
+ *    - Validate `num` as a number. Set product = NaN if not a number.   
+ *    - If product is still undefined, assign `num` to `product`.
+ *    - Otherwise, multiply `product` by this `num`.
+ *    - Return `product`.
  * - Iterate through the given arguments.
- *    - Validate given value as a number. Return an error if not a number.
- *    - If this is the first iteration, assign this value to the
- *    product variable.
- *    - Otherwise, multiply the product variable by this value.
+ *    - If the argument is an array, iterate through it and call `calculate(item)`
+ *    with each iteration, assign the output to `product`.
+ *    - If the argument is a number, call `calculate()`, and assign the output to
+ *    `product`.
  * - Return the result.
  * 
  */
