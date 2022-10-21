@@ -40,8 +40,13 @@ const sum = function() {
 	
 };
 
-const multiply = function() {
-
+/* 
+ * An arrow function that multiplies at least two numbers and returns the product.
+ * @argument {...number} numbers - A positive or negative number.
+ * @returns {number} product represents the difference of the numbers.
+ */
+const multiply = function(...numbers) {
+  
 };
 
 const power = function() {
