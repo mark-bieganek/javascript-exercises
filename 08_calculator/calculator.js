@@ -1,7 +1,7 @@
 /* 
  * An arrow function that adds at least two numbers and returns the sum.
  * @argument {...number} numbers - A positive or negative number.
- * @returns {number} Number represents the sum of the numbers.
+ * @returns {number} sum represents the sum of the numbers.
  */
 const add = function(...numbers) {
   // Stores the result of the calculations.
@@ -19,7 +19,7 @@ const add = function(...numbers) {
 /* 
  * An arrow function that subtracts at least two numbers and returns the difference.
  * @argument {...number} numbers - A positive or negative number.
- * @returns {number} Number represents the difference of the numbers.
+ * @returns {number} difference represents the difference of the numbers.
  */
 const subtract = function(...numbers) {
 	// Stores the result of the calculations.
