@@ -65,9 +65,9 @@ const multiply = function(...numbers) {
     function calculate(num) {
       // Validate given input as a number. If NaN, return NaN.
       if (isNaN(num)) {return NaN};
-      // If this is the first iteration, store num in `product`.
+      // If this is the first calculation, store num in `product`.
       if (typeof product === 'undefined') {product = num}
-        // Otherwise, perform subtraction on the current result.
+        // Otherwise, perform multiplication on `product`.
         else {product *= num};
       return product;
     }
