@@ -1,7 +1,7 @@
 /* 
  * An arrow function that converts a given temperature in °F to °C.
- * @param {fahrenheitParam} required This parameter is always needed. Number expected.
- * @return {number} representing the result of the conversion.
+ * @param {number} fahrenheitParam required This parameter is always needed. Number expected.
+ * @returns {number} representing the result of the conversion.
  */
 const ftoc = (fahrenheitParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
@@ -12,8 +12,8 @@ const ftoc = (fahrenheitParam = 0) => {
 
 /* 
  * An arrow function that converts a given temperature in °C to °F.
- * @param {celsiusParam} required This parameter is always needed. Number expected.
- * @return {number} representing the result of the conversion.
+ * @param {number} celsiusParam required This parameter is always needed. Number expected.
+ * @returns {number} representing the result of the conversion.
  */
 const ctof = (celsiusParam = 0) => {
   // Validate given input as a number. Do not perform conversion if NaN.
@@ -24,8 +24,8 @@ const ctof = (celsiusParam = 0) => {
 
 /* 
  * An arrow function that rounds a given number to one decimal place.
- * @param {numParam1} required This parameter is always needed. Number expected.
- * @return {number} representing the rounded result.
+ * @param {number} numParam1 required This parameter is always needed. Number expected.
+ * @returns {number} representing the rounded result.
  */
 const roundToOneDecimal = (numParam1) => {
   // Validate given input as a number. Do not perform rounding if NaN.
