@@ -46,31 +46,19 @@ const sum = function() {
  * @returns {number} product represents the product of the calculation.
  */
 const multiply = function(...numbers) {
-  	// Stores the result of the calculations.
-    let product;
-    // Iterate through the given numbers.
-    for (const num of numbers) {
-      // Perform multiplication.
-      // If this argument is an array, iterate through it and perform calculations on each item.
-      if (Array.isArray(num)) {
-        for (item of num) {
-          product = calculate(item);
-        };
-      } else {
-        // Argument is not an array, perform calculation.
-        product = calculate(num);
-      };
+  // Stores the result of the calculations.
+  let product;
+  // Add all arguments to a one-dimensional array.
+  numbers = numbers.flat();
+  // Iterate through the given numbers.
+  for (const num of numbers) {
+    // Validate given input as a number. If NaN, return NaN.
+    if (isNaN(num)) {return NaN};
+    // If this is the first calculation, store num in `product`.
+    if (typeof product === 'undefined') {product = num}
+      // Otherwise, perform multiplication on `product`.
+      else {product *= num};
     };
-    // A nested named function that performs the multiplication calculation.
-    function calculate(num) {
-      // Validate given input as a number. If NaN, return NaN.
-      if (isNaN(num)) {return NaN};
-      // If this is the first calculation, store num in `product`.
-      if (typeof product === 'undefined') {product = num}
-        // Otherwise, perform multiplication on `product`.
-        else {product *= num};
-      return product;
-    }
     // Return the final product.
     return product;
 };
@@ -149,18 +137,13 @@ const factorial = function() {
  * 
  * (multiply)
  * - Create a variable named product with no default value.
- * - This function accepts arguments as arrays of numbers or number primitives.
- * - Create a named function calculate() with parameter `num`.
- *    - Validate `num` as a number. Set product = NaN if not a number.   
- *    - If product is still undefined, assign `num` to `product`.
- *    - Otherwise, multiply `product` by this `num`.
- *    - Return `product`.
+ * - Flatten the arguments to a one-dimensional array.
  * - Iterate through the given arguments.
- *    - If the argument is an array, iterate through it and call `calculate(item)`
- *    with each iteration, assign the output to `product`.
- *    - If the argument is a number, call `calculate()`, and assign the output to
- *    `product`.
- * - Return the result.
+ *    - Validate given value as a number. Return NaN if not a number.
+ *    - If this is the first iteration, assign this value to the
+ *    `product` variable.
+ *    - Otherwise, multiply `product`by this value.
+ * - Return `product`.
  * 
  */
 
