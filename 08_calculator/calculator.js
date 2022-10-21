@@ -16,8 +16,24 @@ const add = function(...numbers) {
   return sum;
 };
 
-const subtract = function() {
-	
+/* 
+ * An arrow function that subtracts at least two numbers and returns the difference.
+ * @argument {...number} numbers - A positive or negative number.
+ * @returns {number} Number represents the difference of the numbers.
+ */
+const subtract = function(...numbers) {
+	// Stores the result of the calculations.
+  let difference;
+	// Iterate through the given numbers.
+  for (const num of numbers) {
+    // Validate given input as a number. If NaN, return NaN.
+    if (isNaN(num)) {return NaN};
+    // If this is the first iteration, store num in `difference`.
+    if (typeof difference === 'undefined') {difference = num}
+      // Otherwise, perform subtraction on the current result.
+      else {difference -= num};
+  };
+  return difference;
 };
 
 const sum = function() {
@@ -49,6 +65,7 @@ const factorial = function() {
  * (add)
  * 1. A minimum of two numbers must be provided.
  * 2. Non-numerical inputs are not accepted.
+ * 3. Addition always starts from zero.
  * 
  * OPERATIONS:
  * (add)
