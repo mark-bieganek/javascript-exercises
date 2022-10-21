@@ -1,11 +1,13 @@
 /* 
  * An arrow function that adds at least two numbers and returns the sum.
- * @argument {...number} numbers - A positive or negative number.
+ * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} sum represents the sum of the numbers.
  */
 const add = function(...numbers) {
   // Stores the result of the calculations.
   let sum = 0;
+  // Add all arguments to a one-dimensional array.
+  numbers = numbers.flat();
 	// Iterate through the given numbers.
   for (const num of numbers) {
     // Validate given input as a number. If NaN, return NaN.
@@ -18,12 +20,14 @@ const add = function(...numbers) {
 
 /* 
  * An arrow function that subtracts at least two numbers and returns the difference.
- * @argument {...number} numbers - A positive or negative number.
+ * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} difference represents the difference of the numbers.
  */
 const subtract = function(...numbers) {
 	// Stores the result of the calculations.
   let difference;
+  // Add all arguments to a one-dimensional array.
+  numbers = numbers.flat();
 	// Iterate through the given numbers.
   for (const num of numbers) {
     // Validate given input as a number. If NaN, return NaN.
@@ -121,6 +125,7 @@ const factorial = function() {
  * ALGORITHM:
  * (add)
  * - Create a variable named sum with a default value of 0.
+ * - Flatten the arguments to a one-dimensional array.
  * - Iterate through the given arguments.
  *    - Validate given value as a number. Return NaN if not a number.
  *    - Add this value to the current sum.
@@ -128,6 +133,7 @@ const factorial = function() {
  * 
  * (subtract)
  * - Create a variable named difference with no default value.
+ * - Flatten the arguments to a one-dimensional array.
  * - Iterate through the given arguments.
  *    - Validate given value as a number. Return NaN if not a number.
  *    - If this is the first iteration, assign this value to the
