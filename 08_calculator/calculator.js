@@ -1,4 +1,9 @@
-const add = function() {
+/* 
+ * An arrow function that adds at least two numbers and returns the sum.
+ * @param {...number} num A positive or negative number
+ * @returns {number} representing the result of the conversion
+ */
+const add = function(num) {
 	
 };
 
