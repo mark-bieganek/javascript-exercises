@@ -43,23 +43,21 @@ const sum = function() {
 /* 
  * An arrow function that multiplies an array of numbers and returns the product.
  * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
- * @returns {number} product represents the difference of the numbers.
+ * @returns {number} product represents the product of the calculation.
  */
 const multiply = function(...numbers) {
   	// Stores the result of the calculations.
     let product;
-    // Stores an array of numbers to calculate, from given numbers.
-    let args = [];
     // Iterate through the given numbers.
     for (const num of numbers) {
-      // If this argument is an array, iterate through it as well.
+      // Perform multiplication.
+      // If this argument is an array, iterate through it and perform calculations on each item.
       if (Array.isArray(num)) {
         for (item of num) {
-          // Perform multiplication.
           product = calculate(item);
         };
       } else {
-        // Perform multiplication.
+        // Argument is not an array, perform calculation.
         product = calculate(num);
       };
     };
