@@ -56,12 +56,26 @@ const factorial = function() {
  * - Add the values together.
  * - Output the result.
  * 
+ * (subtract)
+ * - Validate the given values as numbers.
+ * - subtract the values from one-another.
+ * - Output the result.
+ * 
  * ALGORITHM:
  * (add)
  * - Create a variable named sum with a default value of 0.
  * - Iterate through the given arguments.
  *    - Validate given value as a number. Return an error if not a number.
  *    - Add this value to the current sum.
+ * - Return the result.
+ * 
+ * (subtract)
+ * - Create a variable named difference with no default value.
+ * - Iterate through the given arguments.
+ *    - Validate given value as a number. Return an error if not a number.
+ *    - If this is the first iteration, assign this value to the
+ *    difference variable.
+ *    - Otherwise, reduce the difference variable by this value.
  * - Return the result.
  */
 
