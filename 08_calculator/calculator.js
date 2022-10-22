@@ -1,5 +1,5 @@
 /* 
- * An arrow function that adds at least two numbers and returns the sum.
+ * An arrow function that adds numbers and returns the sum.
  * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} sum represents the sum of the numbers.
  */
@@ -40,7 +40,12 @@ const subtract = (...numbers) => {
   return difference;
 };
 
-const sum = () => {
+/* 
+ * An arrow function adds numbers and returns the sum.
+ * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
+ * @returns {number} sum represents the sum of the numbers.
+ */
+const sum = (...numbers) => {
 
 };
 
