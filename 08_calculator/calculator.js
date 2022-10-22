@@ -83,7 +83,13 @@ const multiply = (...numbers) => {
     return product;
 };
 
-const power = () => {
+/* 
+ * An arrow function that performs exponentiation on a number and returns the product.
+ * @argument {base} number required - Accepts a single numeric value.
+ * @argument {power} number required - Accepts a single numeric value.
+ * @returns {number} product represents the product of the calculation.
+ */
+const power = (base, power) => {
 	
 };
 
