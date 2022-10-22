@@ -46,7 +46,7 @@ const subtract = (...numbers) => {
  * @returns {number} sum represents the sum of the numbers.
  */
 const sum = (...numbers) => {
-
+  return add(numbers);
 };
 
 /* 
