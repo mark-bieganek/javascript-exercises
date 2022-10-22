@@ -3,7 +3,7 @@
  * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} sum represents the sum of the numbers.
  */
-const add = function(...numbers) {
+const add = (...numbers) => {
   // Stores the result of the calculations.
   let sum = 0;
   // Add all arguments to a one-dimensional array.
@@ -23,7 +23,7 @@ const add = function(...numbers) {
  * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} difference represents the difference of the numbers.
  */
-const subtract = function(...numbers) {
+const subtract = (...numbers) => {
 	// Stores the result of the calculations.
   let difference;
   // Add all arguments to a one-dimensional array.
@@ -40,7 +40,7 @@ const subtract = function(...numbers) {
   return difference;
 };
 
-const sum = function() {
+const sum = () => {
 	
 };
 
@@ -49,7 +49,7 @@ const sum = function() {
  * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
  * @returns {number} product represents the product of the calculation.
  */
-const multiply = function(...numbers) {
+const multiply = (...numbers) => {
   // Stores the result of the calculations.
   let product;
   // Add all arguments to a one-dimensional array.
@@ -67,11 +67,11 @@ const multiply = function(...numbers) {
     return product;
 };
 
-const power = function() {
+const power = () => {
 	
 };
 
-const factorial = function() {
+const factorial = () => {
 	
 };
 
