@@ -41,7 +41,7 @@ const subtract = (...numbers) => {
 };
 
 const sum = () => {
-	
+
 };
 
 /* 
@@ -86,11 +86,11 @@ const factorial = () => {
  * 
  * CONSTRAINTS:
  * (add)
- * 1. Non-numerical inputs are not accepted.
+ * 1. Non-numerical inputs are not accepted. Arrays of numbers are OK.
  * 2. Addition always starts from zero.
  * 
  * (subtract)
- * 1. A minimum of two numbers must be provided.
+ * 1. A minimum of two numbers must be provided. Arrays of numbers are OK.
  * 2. Non-numerical inputs are not accepted.
  * 3. Subtraction always starts from the value of the first given
  * number. The second given number reduces the value of the first.
@@ -98,13 +98,16 @@ const factorial = () => {
  * reduces the value of the previous calculation.
  * 
  * (multiply)
- * 1. A minimum of two numbers must be provided.
+ * 1. A minimum of two numbers must be provided. Arrays of numbers are OK.
  * 2. Non-numerical inputs are not accepted.
  * 3. Multiplication always starts from the value of the first given
  * number, multiplied by the value of the second number.
  * 4. If there are more than two given numbers, each additional number
  * multiplies the value of the previous calculation.
  * 
+ * (sum)
+ * 1. Non-numerical inputs are not accepted. Arrays of numbers are OK.
+ * 2. Addition always starts from zero.
  * 
  * OPERATIONS:
  * (add)
@@ -117,9 +120,14 @@ const factorial = () => {
  * - Subtract the values from one-another.
  * - Output the result.
  * 
- *  * (multiply)
+ * (multiply)
  * - Validate the given values as numbers.
  * - Multiply the values by one-another.
+ * - Output the result.
+ * 
+ * (sum)
+ * - Validate the given values as numbers.
+ * - Add the values together.
  * - Output the result.
  * 
  * ALGORITHM:
@@ -136,20 +144,26 @@ const factorial = () => {
  * - Flatten the arguments to a one-dimensional array.
  * - Iterate through the given arguments.
  *    - Validate given value as a number. Return NaN if not a number.
- *    - If this is the first iteration, assign this value to the
- *    difference variable.
- *    - Otherwise, reduce the difference variable by this value.
- * - Return the result.
+ *    - If first iteration, assign this value to `difference`
+ *    - Otherwise, reduce `difference` by this value.
+ * - Return `difference`.
  * 
  * (multiply)
  * - Create a variable named product with no default value.
  * - Flatten the arguments to a one-dimensional array.
  * - Iterate through the given arguments.
  *    - Validate given value as a number. Return NaN if not a number.
- *    - If this is the first iteration, assign this value to the
- *    `product` variable.
+ *    - If first iteration, assign this value to `product`.
  *    - Otherwise, multiply `product`by this value.
  * - Return `product`.
+ * 
+ * (add)
+ * - Create a variable named sum with a default value of 0.
+ * - Flatten the arguments to a one-dimensional array.
+ * - Iterate through the given arguments.
+ *    - Validate given value as a number. Return NaN if not a number.
+ *    - Add this value to the current `sum`.
+ * - Return `sum`.
  * 
  */
 
