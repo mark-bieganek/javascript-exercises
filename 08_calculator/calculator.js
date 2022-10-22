@@ -86,9 +86,8 @@ const factorial = () => {
  * 
  * CONSTRAINTS:
  * (add)
- * 1. A minimum of two numbers must be provided.
- * 2. Non-numerical inputs are not accepted.
- * 3. Addition always starts from zero.
+ * 1. Non-numerical inputs are not accepted.
+ * 2. Addition always starts from zero.
  * 
  * (subtract)
  * 1. A minimum of two numbers must be provided.
@@ -105,6 +104,7 @@ const factorial = () => {
  * number, multiplied by the value of the second number.
  * 4. If there are more than two given numbers, each additional number
  * multiplies the value of the previous calculation.
+ * 
  * 
  * OPERATIONS:
  * (add)
