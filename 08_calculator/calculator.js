@@ -116,8 +116,22 @@ const power = (base, power) => {
   return product;
 };
 
-const factorial = () => {
-	
+/* 
+ * An arrow function that performs factorial calculations on a number and returns the product.
+ * @argument {number} number required - Accepts a single numeric value.
+ * @returns {number} product represents the product of the calculation.
+ */
+const factorial = (number) => {
+  // Validate the given number as a numerical primitive with a min value of 0.
+  if (isNaN(number) || number < 0) {return};
+  // Stores the product of the calculation.
+  let product = 1; // default value
+  // Iterate from the given number to 1.
+  for (i = number; i >= 1; i--) {
+    product *= i;
+  }
+  // Return the final product.
+  return product;
 };
 
 /* 
@@ -165,6 +179,17 @@ const factorial = () => {
  * 7. A negative power tells us how many times to divide a base number.
  * 8. A power of zero will always return 1.
  * 
+ * (factorial)
+ * 1. A single number must be provided.
+ * 2. Non-numerical input is not accepted.
+ * 3. Only integers are accepted.
+ * 4. Negative numbers are accepted, but will always return 'undefined'.
+ * 5. Zero is accepted as an input, but will always return '1'.
+ * 6. For integers greater than 1, a factorial calculation is performed.
+ * 7. A Factorial calculation is defined as the product of an integer and 
+ * all the integers below it; e.g. factorial four ( 4! ) is equal to 24. 
+ * ie: (4 x 3 x 2 x 1) = 24
+ * 
  * OPERATIONS:
  * (add)
  * - Validate the given values as numbers.
@@ -190,6 +215,13 @@ const factorial = () => {
  * - Validate the given values as numbers.
  * - If the power is positive, multiply the base number by itself.
  * - If the power is negative, divide the base number by itself.
+ * - Output the result.
+ * 
+ * (factorial)
+ * - Validate the given value as numeric.
+ * - Validate the given value as an integer.
+ * - Validate the given value to have a minimum value of 0.
+ * - Multiply the given value by the next integer below it.
  * - Output the result.
  * 
  * ALGORITHM:
@@ -249,6 +281,17 @@ const factorial = () => {
  *          by the value of the first given value (the base).
  * - Return `product`.
  * 
+ * (factorial)
+ * - Create a variable named product with a default value of 1.
+ *  * - Validate the given value `@number` as numeric. Return if false.
+ *  * - Validate the given value `@number` as an integer. Return if false.
+ * - If the given value `@number` is negative, return.
+ * - If the given value `@number` is equal to 0, return 1.
+ * - Create a loop, with the initial expression i = `@number`, the 
+ *        condition expression i >= 1, and decrement i--.
+ *          - Set `product` equal to the `product` multiplied by the current
+ *          value of the iterator.
+ * - Return `product`.
  */
 
 // Do not edit below this line
