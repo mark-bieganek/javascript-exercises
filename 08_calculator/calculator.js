@@ -122,11 +122,15 @@ const power = (base, power) => {
  * @returns {number} product represents the product of the calculation.
  */
 const factorial = (number) => {
-  // Validate the given number as a numerical primitive with a min value of 0.
-  if (isNaN(number) || number < 0) {return};
+  // Validate the given number as a numerical primitive.
+  if (isNaN(number)) {return};
+  // Convert the given number to a whole number (integer).
+  number = Math.floor(number);
+  // Validate the given number to have a minimum value of 0.
+  if (number < 0) {return};
   // Stores the product of the calculation.
   let product = 1; // default value
-  // Iterate from the given number to 1.
+  // Perform calculations. Iterate from the given number to 1.
   for (i = number; i >= 1; i--) {
     product *= i;
   }
