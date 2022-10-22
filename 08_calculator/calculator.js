@@ -90,7 +90,30 @@ const multiply = (...numbers) => {
  * @returns {number} product represents the product of the calculation.
  */
 const power = (base, power) => {
-	
+	// Stores the result of the calculations.
+  let product;
+  // Validate given arguments as a numbers. If NaN, return NaN.
+  if (isNaN(base)) {return NaN};
+  if (isNaN(power)) {return NaN};
+  // A power of zero always returns 1.
+  if (power === 0) {return 1};
+  // If power is positive.
+  for (i = 0; i < power; i++) {
+    // If this is the first calculation, store num in `product`.
+    if (typeof product === 'undefined') {product = base}
+    // Otherwise, perform multiplication on `product`.
+    else {product *= base};
+  };
+  // If power is positive.
+  for (i = 0; i > power; i--) {
+    // If this is the first calculation, store num in `product`.
+    if (typeof product === 'undefined') {product = base}
+    // Otherwise, perform multiplication on `product`.
+    else {product /= base};
+  };
+  
+  // Return the final product.
+  return product;
 };
 
 const factorial = () => {
@@ -140,6 +163,7 @@ const factorial = () => {
  * 5. The power can be positive or negative.
  * 6. A positive power tells us how many times to multiply a base number.
  * 7. A negative power tells us how many times to divide a base number.
+ * 8. A power of zero will always return 1.
  * 
  * OPERATIONS:
  * (add)
