@@ -125,6 +125,16 @@ const factorial = () => {
  * 1. Non-numerical inputs are not accepted. Arrays of numbers are OK.
  * 2. Addition always starts from zero.
  * 
+ * (power)
+ * 1. Two numbers must be provided.
+ * 2. Non-numerical inputs are not accepted.
+ * 3. The first given number is the base. And the second given number is
+ * the power.
+ * 4. The base can be positive or negative.
+ * 5. The power can be positive or negative.
+ * 6. A positive power tells us how many times to multiply a base number.
+ * 7. A negative power tells us how many times to divide a base number.
+ * 
  * OPERATIONS:
  * (add)
  * - Validate the given values as numbers.
@@ -144,6 +154,12 @@ const factorial = () => {
  * (sum)
  * - Validate the given values as numbers.
  * - Add the values together.
+ * - Output the result.
+ * 
+ * (power)
+ * - Validate the given values as numbers.
+ * - If the power is positive, multiply the base number by itself.
+ * - If the power is negative, divide the base number by itself.
  * - Output the result.
  * 
  * ALGORITHM:
@@ -180,6 +196,28 @@ const factorial = () => {
  *    - Validate given value as a number. Return NaN if not a number.
  *    - Add this value to the current `sum`.
  * - Return `sum`.
+ * 
+ * (power)
+ * - Create a variable named product with no default value.
+ * - Check if the second given number (the power) is positive or
+ * negative.
+ *    - If power is positive:
+ *        - Create a loop, with the initial expression = 0, the 
+ *        condition expression <= `power`, and iterate by 1.
+ *          - If this is the first iteration:
+ *              - Set `product` equal to the value of the first given 
+ *              value (the base).
+ *          - Otherwise, set `product` equal to the `product` 
+ *          multiplied by the value of the first given value (the base)
+ *    - If power is negative:
+ *        - Create a loop, with the initial expression = 0, the 
+ *        condition expression >= `power`, and decrement by 1.
+ *          - If this is the first iteration:
+ *              - Set `product` equal to the value of the first given 
+ *              value (the base).
+ *          - Otherwise, set `product` equal to the `product` divided
+ *          by the value of the first given value (the base).
+ * - Return `product`.
  * 
  */
 
