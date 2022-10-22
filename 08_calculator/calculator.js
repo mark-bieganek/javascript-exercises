@@ -46,7 +46,18 @@ const subtract = (...numbers) => {
  * @returns {number} sum represents the sum of the numbers.
  */
 const sum = (...numbers) => {
-  return add(numbers);
+  // Stores the result of the calculations.
+  let sum = 0;
+  // Add all arguments to a one-dimensional array.
+  numbers = numbers.flat();
+	// Iterate through the given numbers.
+  for (const num of numbers) {
+    // Validate given input as a number. If NaN, return NaN.
+    if (isNaN(num)) {return NaN};
+    // Add this number to the current sum.
+    sum += num;
+  };
+  return sum;
 };
 
 /* 
