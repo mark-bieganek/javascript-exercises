@@ -1,21 +1,14 @@
 /* 
- * An arrow function that adds numbers and returns the sum.
- * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
+ * An arrow function that adds two numbers and returns the sum.
+ * @argument {firstNumber} number - The first number to add.
+ * @argument {secondNumber} number - The second number to add.
  * @returns {number} sum represents the sum of the numbers.
  */
-const add = (...numbers) => {
-  // Stores the result of the calculations.
-  let sum = 0;
-  // Add all arguments to a one-dimensional array.
-  numbers = numbers.flat();
-	// Iterate through the given numbers.
-  for (const num of numbers) {
-    // Validate given input as a number. If NaN, return NaN.
-    if (isNaN(num)) {return NaN};
-    // Add this number to the current sum.
-    sum += num;
-  };
-  return sum;
+const add = (firstNumber, secondNumber) => {
+  // Validate given inputs as a numbers. If NaN, return NaN.
+  if (isNaN(firstNumber) || isNaN(secondNumber)) {return NaN};
+  // Perform addition calculation.
+  return firstNumber + secondNumber;
 };
 
 /* 
@@ -149,8 +142,7 @@ const factorial = (number) => {
  * 
  * CONSTRAINTS:
  * (add)
- * 1. Non-numerical inputs are not accepted. Arrays of numbers are OK.
- * 2. Addition always starts from zero.
+ * 1. Non-numerical inputs are not accepted.
  * 
  * (subtract)
  * 1. A minimum of two numbers must be provided. Arrays of numbers are OK.
@@ -230,12 +222,8 @@ const factorial = (number) => {
  * 
  * ALGORITHM:
  * (add)
- * - Create a variable named sum with a default value of 0.
- * - Flatten the arguments to a one-dimensional array.
- * - Iterate through the given arguments.
- *    - Validate given value as a number. Return NaN if not a number.
- *    - Add this value to the current sum.
- * - Return the result.
+ * - Validate given values as numbers. Return NaN if not a number.
+ * - Return the result of both given numbers added together.
  * 
  * (subtract)
  * - Create a variable named difference with no default value.
