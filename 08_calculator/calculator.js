@@ -2,7 +2,7 @@
  * An arrow function that adds two numbers and returns the sum.
  * @argument {firstNumber} number - The first number to add.
  * @argument {secondNumber} number - The second number to add.
- * @returns {number} sum represents the sum of the numbers.
+ * @returns {number} With the sum of the numbers.
  */
 const add = (firstNumber, secondNumber) => {
   // Validate given inputs as a numbers. If NaN, return NaN.
@@ -12,25 +12,16 @@ const add = (firstNumber, secondNumber) => {
 };
 
 /* 
- * An arrow function that subtracts at least two numbers and returns the difference.
- * @argument {...number|Array} numbers - Accepts multiple numeric values or numeric arrays.
- * @returns {number} difference represents the difference of the numbers.
+ * An arrow function that subtracts two numbers and returns the difference.
+ * @argument {firstNumber} number - The first number to subtract.
+ * @argument {secondNumber} number - The second number to subtract.
+ * @returns {number} With the difference of the numbers.
  */
-const subtract = (...numbers) => {
-	// Stores the result of the calculations.
-  let difference;
-  // Add all arguments to a one-dimensional array.
-  numbers = numbers.flat();
-	// Iterate through the given numbers.
-  for (const num of numbers) {
-    // Validate given input as a number. If NaN, return NaN.
-    if (isNaN(num)) {return NaN};
-    // If this is the first iteration, store num in `difference`.
-    if (typeof difference === 'undefined') {difference = num}
-      // Otherwise, perform subtraction on the current result.
-      else {difference -= num};
-  };
-  return difference;
+const subtract = (firstNumber, secondNumber) => {
+  // Validate given inputs as a numbers. If NaN, return NaN.
+  if (isNaN(firstNumber) || isNaN(secondNumber)) {return NaN};
+  // Perform subtraction calculation.
+  return firstNumber - secondNumber;
 };
 
 /* 
@@ -145,12 +136,8 @@ const factorial = (number) => {
  * 1. Non-numerical inputs are not accepted.
  * 
  * (subtract)
- * 1. A minimum of two numbers must be provided. Arrays of numbers are OK.
+ * 1. A minimum of two numbers must be provided.
  * 2. Non-numerical inputs are not accepted.
- * 3. Subtraction always starts from the value of the first given
- * number. The second given number reduces the value of the first.
- * 4. If there are more than two given numbers, each additional number
- * reduces the value of the previous calculation.
  * 
  * (multiply)
  * 1. A minimum of two numbers must be provided. Arrays of numbers are OK.
@@ -226,13 +213,8 @@ const factorial = (number) => {
  * - Return the result of both given numbers added together.
  * 
  * (subtract)
- * - Create a variable named difference with no default value.
- * - Flatten the arguments to a one-dimensional array.
- * - Iterate through the given arguments.
- *    - Validate given value as a number. Return NaN if not a number.
- *    - If first iteration, assign this value to `difference`
- *    - Otherwise, reduce `difference` by this value.
- * - Return `difference`.
+ * - Validate given values as numbers. Return NaN if not a number.
+ * - Return the result of both given numbers subtracted from one-another.
  * 
  * (multiply)
  * - Create a variable named product with no default value.
