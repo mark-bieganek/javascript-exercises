@@ -133,7 +133,8 @@ const factorial = (number) => {
  * 
  * CONSTRAINTS:
  * (add)
- * 1. Non-numerical inputs are not accepted.
+ * 1. A minimum of two numbers must be provided.
+ * 2. Non-numerical inputs are not accepted.
  * 
  * (subtract)
  * 1. A minimum of two numbers must be provided.
